@@ -7,5 +7,5 @@ window.OIBI_FIREBASE_CONFIG = {
   storageBucket: "PASTE_PROJECT_ID.appspot.com",
   messagingSenderId: "PASTE_SENDER_ID",
   appId: "PASTE_APP_ID",
-  adminEmails: ["sarkartax82@gmail.com"]
+  adminEmails: ["biplab876821@gmail.com"]
 };
