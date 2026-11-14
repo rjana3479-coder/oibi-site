@@ -131,6 +131,7 @@ section{padding-block:68px}
 .tiles{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0;grid-column:span 4}
 .tile.wide{grid-column:span 12}
+.tile.half{grid-column:span 6}
 .tile header{display:flex;align-items:center;gap:14px}
 .ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--forest);color:var(--gold);display:grid;place-items:center}
 .ic svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -152,7 +153,7 @@ section{padding-block:68px}
 .tile.gold .item:hover{background:rgba(42,28,0,.1)}
 .tile.gold .btn{background:var(--gold-ink);color:var(--gold);border-color:var(--gold-ink)}
 @media (max-width:980px){.tile{grid-column:span 6}.tile.wide{grid-column:span 12}}
-@media (max-width:640px){.tile,.tile.wide{grid-column:span 12}}
+@media (max-width:640px){.tile,.tile.wide,.tile.half{grid-column:span 12}}
 
 /* calendar */
 .cal{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
@@ -176,6 +177,18 @@ section{padding-block:68px}
 .step p{font-size:16px;color:var(--muted)}
 @media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:30px}.step:nth-child(2n)::after{display:none}}
 @media (max-width:480px){.steps{grid-template-columns:1fr}.step::after{display:none}}
+
+/* track */
+.sr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.trk{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:18px}
+.trk form{display:flex;flex-wrap:wrap;gap:12px}
+.trk input{flex:1 1 260px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em}
+.trk-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ts{border:1.5px solid var(--line);border-radius:12px;padding:14px;text-align:center;font-weight:700;color:var(--muted);background:var(--bg)}
+.ts.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.ts.cur{outline:3px solid var(--gold);outline-offset:2px}
+.trk-msg{font-size:17px}
+@media (max-width:520px){.trk-steps{grid-template-columns:1fr}}
 
 /* contact band */
 .contact{background:var(--forest);color:var(--on-forest);position:relative;overflow:hidden}
@@ -298,6 +311,7 @@ input[type=checkbox]{width:auto}
       <a href="#services">Services</a>
       <a href="#calendar">Filing calendar</a>
       <a href="#process">How we work</a>
+      <a href="#track">Track</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="btn btn-gold btn-sm" type="button" data-open="itr">Apply now</button>
@@ -332,8 +346,8 @@ input[type=checkbox]{width:auto}
     </div>
     <div class="wrap">
       <div class="facts">
-        <div class="fact"><b>30</b><span>services under one roof</span></div>
-        <div class="fact"><b>7</b><span>service lines, tax to hallmarking</span></div>
+        <div class="fact"><b>28</b><span>services under one roof</span></div>
+        <div class="fact"><b>6</b><span>service lines, tax to digital signature</span></div>
         <div class="fact"><b>Ranaghat</b><span>Nadia, West Bengal</span></div>
       </div>
     </div>
@@ -395,19 +409,38 @@ input[type=checkbox]{width:auto}
     </div>
   </section>
 
+  <section id="track" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Track your application</span>
+          <h2>Check your status with your reference number</h2>
+        </div>
+        <p>You get a reference number when you submit a form. It looks like OIBI-261114-AB12.</p>
+      </div>
+      <div class="trk">
+        <form id="trForm" novalidate>
+          <label class="sr" for="trRef">Reference number</label>
+          <input id="trRef" type="text" placeholder="OIBI-261114-AB12" autocomplete="off" autocapitalize="characters" maxlength="24">
+          <button class="btn btn-solid" type="submit">Check status</button>
+        </form>
+        <div id="trOut" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
   <div class="contact" id="contact">
     <div class="wrap" style="padding-block:68px">
       <div class="contact-in">
         <div>
           <span class="eyebrow">Contact</span>
           <h2>Talk to OIBI Associates</h2>
-          <p class="sub">Call, message on WhatsApp or write to us. Tax Consultant Firm, Ranaghat, Nadia, West Bengal.</p>
+          <p class="sub">Send an application or message us on WhatsApp. Tax Consultant Firm, Ranaghat, Nadia, West Bengal.</p>
           <div class="lines">
-            <div class="line"><span class="k">Mobile</span><a class="v" href="tel:+916295005243">6295005243</a><button class="copy" type="button" data-copy="6295005243">Copy</button></div>
-            <div class="line"><span class="k">Mobile</span><a class="v" href="tel:+919734875957">9734875957</a><button class="copy" type="button" data-copy="9734875957">Copy</button></div>
-            <div class="line"><span class="k">Email</span><a class="v" href="mailto:sarkartax82@gmail.com">sarkartax82@gmail.com</a><button class="copy" type="button" data-copy="sarkartax82@gmail.com">Copy</button></div>
+            <div class="line"><span class="k">Mobile</span></div>
+            <div class="line"><span class="k">Email</span></div>
           </div>
-        </div>
+                  </div>
         <div class="panel">
           <h3>Ready to start?</h3>
           <p>Fill the short form for your service. You get a reference number to quote when you send documents.</p>
@@ -429,7 +462,7 @@ input[type=checkbox]{width:auto}
 <footer class="foot">
   <div class="wrap foot-in">
     <span><b>OIBI Associates</b> · Tax Consultant Firm, Ranaghat</span>
-    <span class="mono">sarkartax82@gmail.com · 6295005243 · 9734875957 · <a href="#admin">Staff login</a></span>
+    <span class="mono">Mobile · Email · <a href="#admin">Staff login</a></span>
   </div>
 </footer>
 
@@ -474,7 +507,7 @@ var ICONS={
 var TURN=['Below ₹20 lakh','₹20 – 40 lakh','₹40 lakh – ₹1.5 crore','₹1.5 – 5 crore','Above ₹5 crore'];
 var BIZ=['Proprietorship','Partnership firm','Private Limited / LLP','Trust / Society','Individual, no business','Other'];
 var SERVICES=[
- {id:'itr',name:'Income Tax Services',tag:'IT',icon:'file',items:['ROC incorporation','Income tax return filing','Balance sheet & profit and loss','Audit','Assessment & scrutiny'],
+ {id:'itr',name:'Income Tax Services',tag:'IT',icon:'file',half:1,items:['Income tax return filing','Balance sheet & profit and loss','Audit','Assessment & scrutiny'],
   fields:[
    {k:'taxpayer',t:'select',l:'Taxpayer type',o:['Salaried','Business or profession','Pensioner','Company / LLP / Firm','Other']},
    {k:'pan',t:'text',l:'PAN',ph:'ABCDE1234F',pan:1,h:'Optional now. Needed before we file.'},
@@ -482,11 +515,8 @@ var SERVICES=[
    {k:'src',t:'multi',l:'Income sources',o:['Salary','Business or profession','House property','Capital gains','Interest / dividend','Other']},
    {k:'band',t:'select',l:'Approximate yearly income',o:['Below ₹2.5 lakh','₹2.5 – 5 lakh','₹5 – 10 lakh','₹10 – 25 lakh','Above ₹25 lakh']},
    {k:'notice',t:'select',l:'Received any income tax notice?',o:['No','Yes']},
-   {k:'ent',t:'select',l:'For ROC incorporation: entity type',o:['Not applicable','Private Limited Company','LLP','One Person Company','Partnership firm','Section 8 (non-profit)','Not sure']},
-   {k:'names',t:'text',l:'For ROC incorporation: proposed names',ph:'Two name options'},
-   {k:'ppl',t:'number',l:'For ROC incorporation: directors / partners',ph:'e.g. 2'}
   ]},
- {id:'gst',name:'GST Services',tag:'GST',icon:'receipt',items:['GST registration','GST modification','GST cancellation','GST return filing','GST audit'],
+ {id:'gst',name:'GST Services',tag:'GST',icon:'receipt',half:1,items:['GST registration','GST modification','GST cancellation','GST return filing','GST audit'],
   fields:[
    {k:'biz',t:'select',l:'Business type',o:BIZ},
    {k:'pan',t:'text',l:'PAN of business / owner',ph:'ABCDE1234F',pan:1},
@@ -502,31 +532,24 @@ var SERVICES=[
    {k:'act',t:'text',l:'Business activity',ph:'e.g. grocery shop, tailoring, restaurant'},
    {k:'addr',t:'textarea',l:'Business address',ph:'Shop or office address with PIN code'}
   ]},
- {id:'acc',name:'Accounting Services',tag:'ACC',icon:'calc',items:['Professional Tax return filing','TDS & TCS return filing','Business plan & project report','Income certificate','Turnover certificate','Bookkeeping & accounting','CMA data & estimated projected balance sheet'],
+ {id:'acc',name:'Accounting Services',tag:'ACC',icon:'calc',wide:1,items:['Professional Tax return filing','TDS & TCS return filing','Business plan & project report','Income certificate','Turnover certificate','Bookkeeping & accounting','CMA data & estimated projected balance sheet'],
   fields:[
    {k:'turn',t:'select',l:'Yearly turnover',o:TURN},
    {k:'purpose',t:'select',l:'What is it needed for?',o:['Bank loan','Tender','Visa','Scholarship or other certificate','Regular books','Other']},
    {k:'period',t:'text',l:'Year or period needed',ph:'e.g. FY 2025-26'}
   ]},
- {id:'tally',name:'Tally Software',tag:'SW',icon:'screen',items:['Tally sales','Tally services'],
+ {id:'tally',name:'Tally Software',tag:'SW',icon:'screen',half:1,items:['Tally sales','Tally services'],
   fields:[
    {k:'need',t:'select',l:'What do you need?',o:['New Tally licence','Renewal / TSS','Installation and training','Data repair','Customisation']},
    {k:'ed',t:'select',l:'Edition',o:['Silver (single user)','Gold (multi user)','Not sure']},
    {k:'users',t:'number',l:'Number of users',ph:'e.g. 2'}
   ]},
- {id:'dsc',name:'Digital Signature (DSC)',tag:'DSC',icon:'key',items:['Digital Signature Certificate'],
+ {id:'dsc',name:'Digital Signature (DSC)',tag:'DSC',icon:'key',half:1,items:['Digital Signature Certificate'],
   fields:[
    {k:'holder',t:'select',l:'Certificate for',o:['Individual','Organisation']},
    {k:'use',t:'multi',l:'Use it for',o:['GST','Income tax','ROC / MCA','Tenders','Other']},
    {k:'yrs',t:'select',l:'Validity',o:['1 year','2 years','3 years']},
    {k:'tok',t:'select',l:'USB token',o:['I already have a token','I need a new token']}
-  ]},
- {id:'bis',name:'BIS Gold Hallmarking',tag:'BIS',icon:'gem',gold:1,items:['BIS gold hallmarking certificate'],
-  fields:[
-   {k:'jt',t:'select',l:'Jeweller type',o:['Retailer','Manufacturer','Both']},
-   {k:'reg',t:'select',l:'BIS registration',o:['Already registered','Not registered yet']},
-   {k:'out',t:'number',l:'Number of outlets',ph:'e.g. 1'},
-   {k:'prod',t:'text',l:'Products',ph:'e.g. rings, chains, bangles'}
   ]}
 ];
 function svcById(id){for(var i=0;i<SERVICES.length;i++){if(SERVICES[i].id===id)return SERVICES[i];}return SERVICES[0];}
@@ -538,7 +561,7 @@ function svcById(id){for(var i=0;i<SERVICES.length;i++){if(SERVICES[i].id===id)r
   $('#marq').innerHTML=h;
   var t='';
   SERVICES.forEach(function(s){
-    t+='<article class="tile'+(s.wide?' wide':'')+(s.gold?' gold':'')+'"><header><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[s.icon]+'</svg></span><div><h3>'+esc(s.name)+'</h3><span class="cnt">'+s.items.length+(s.items.length===1?' SERVICE':' SERVICES')+'</span></div></header><ul>';
+    t+='<article class="tile'+(s.wide?' wide':'')+(s.gold?' gold':'')+(s.half?' half':'')+'"><header><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[s.icon]+'</svg></span><div><h3>'+esc(s.name)+'</h3><span class="cnt">'+s.items.length+(s.items.length===1?' SERVICE':' SERVICES')+'</span></div></header><ul>';
     s.items.forEach(function(i){t+='<li><button class="item" type="button" data-open="'+s.id+'" data-item="'+esc(i)+'"><span>'+esc(i)+'</span><span class="go" aria-hidden="true">→</span></button></li>';});
     t+='</ul><button class="btn btn-solid btn-sm" type="button" data-open="'+s.id+'">Apply now</button></article>';
   });
@@ -569,8 +592,12 @@ function makeRef(){
 function submitRecord(rec){
   if(LIVE){
     var o={};for(var k in rec){o[k]=rec[k];}
-    o.createdAt=firebase.firestore.FieldValue.serverTimestamp();
-    return db.collection('enquiries').add(o);
+    var ts=firebase.firestore.FieldValue.serverTimestamp();
+    o.createdAt=ts;
+    var b=db.batch();
+    b.set(db.collection('enquiries').doc(),o);
+    b.set(db.collection('status').doc(rec.ref),{status:'new',updatedAt:ts});
+    return b.commit();
   }
   var m=JSON.parse(JSON.stringify(rec));m.id='l'+nowMs();m.createdAt=nowMs();m.demo=false;
   mem.unshift(m);saveDemo();return Promise.resolve();
@@ -673,6 +700,28 @@ function done(rec){
   $('#cpRef').addEventListener('click',function(){copyText(rec.ref,this);});
 }
 
+/* ---------- track status ---------- */
+var TS=[['new','Received'],['progress','In progress'],['done','Completed']];
+var TMSG={new:'We have received your application. We will call you to confirm the work and the documents needed.',progress:'Your work is in progress. We will contact you if we need anything from you.',done:'Your work is completed. Please contact us to collect your documents.'};
+function showTrack(kind,v){
+  var o=$('#trOut');
+  if(kind==='err'){o.innerHTML='<p class="err" role="alert">'+esc(v)+'</p>';return;}
+  var idx=0;TS.forEach(function(t,i){if(t[0]===v)idx=i;});
+  var h='<div class="trk-steps">';
+  TS.forEach(function(t,i){h+='<div class="ts'+(i<=idx?' on':'')+(i===idx?' cur':'')+'">'+(i<idx?'✓ ':'')+esc(t[1])+'</div>';});
+  o.innerHTML=h+'</div><p class="trk-msg">'+esc(TMSG[v]||TMSG.new)+'</p>';
+}
+$('#trForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var ref=$('#trRef').value.trim().toUpperCase();
+  if(!/^OIBI-[A-Z0-9]+-[A-Z0-9]{4}$/.test(ref)){showTrack('err','Check the reference number. It looks like OIBI-261114-AB12.');return;}
+  var p;
+  if(LIVE){p=db.collection('status').doc(ref).get().then(function(d){return d.exists?d.data().status:null;});}
+  else{var f=null;mem.forEach(function(x){if(x.ref===ref)f=x;});p=Promise.resolve(f?f.status:null);}
+  p.then(function(st){if(!st)showTrack('err','No application found with this number. Check it and try again, or message us on WhatsApp.');else showTrack('ok',st);},
+    function(){showTrack('err','Could not check right now. Please try again in a minute.');});
+});
+
 /* ---------- copy helper ---------- */
 function copyText(v,btn){
   var old=btn.textContent;
@@ -764,7 +813,13 @@ function detail(id){
   openOv();$('#xBtn').addEventListener('click',closeOv);
 }
 function updateRec(id,patch){
-  if(LIVE)return db.collection('enquiries').doc(id).update(patch);
+  if(LIVE){
+    var rec=null;A.list.forEach(function(x){if(x.id===id)rec=x;});
+    var b=db.batch();
+    b.update(db.collection('enquiries').doc(id),patch);
+    if(rec&&rec.ref&&patch.status)b.set(db.collection('status').doc(rec.ref),{status:patch.status,updatedAt:firebase.firestore.FieldValue.serverTimestamp()});
+    return b.commit();
+  }
   mem.forEach(function(x){if(x.id===id){for(var k in patch)x[k]=patch[k];}});saveDemo();return Promise.resolve();
 }
 function csvAll(){
@@ -792,7 +847,12 @@ document.addEventListener('click',function(e){
   else if(a==='del'){
     if(delArm!==id){delArm=id;b.textContent='Tap again to delete';setTimeout(function(){delArm=null;if(b.isConnected)b.textContent='Delete';},3000);return;}
     var done=function(){delArm=null;toast('Deleted');closeOv();adminRender();};
-    if(LIVE)db.collection('enquiries').doc(id).delete().then(done,function(){toast('Could not delete');});
+    if(LIVE){
+      var rc=null;A.list.forEach(function(x){if(x.id===id)rc=x;});
+      var bd=db.batch();bd.delete(db.collection('enquiries').doc(id));
+      if(rc&&rc.ref)bd.delete(db.collection('status').doc(rc.ref));
+      bd.commit().then(done,function(){toast('Could not delete');});
+    }
     else{mem=mem.filter(function(x){return x.id!==id;});saveDemo();done();}
   }
   else if(a==='csv'){

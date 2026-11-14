@@ -2,15 +2,15 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Only these Google accounts can read, edit or delete applications.
+    // Only this Google account can read, edit or delete applications.
     function isAdmin() {
       return request.auth != null
         && request.auth.token.email_verified == true
         && request.auth.token.email in ['biplab876821@gmail.com'];
     }
 
+    // Full applications: customers can only submit, never read.
     match /enquiries/{id} {
-      // Anyone can submit a new application (the website form), nobody can read others' data.
       allow create: if request.resource.data.keys().hasOnly(
             ['ref','service','serviceLabel','items','name','mobile','email','city','business','answers','notes','status','createdAt'])
         && request.resource.data.name is string && request.resource.data.name.size() <= 100
@@ -20,6 +20,19 @@ service cloud.firestore {
         && request.resource.data.notes.size() <= 1000;
 
       allow read, update, delete: if isAdmin();
+    }
+
+    // Public status lookup: holds only a status word, no personal data.
+    // A customer can look up one reference number but cannot list them.
+    match /status/{ref} {
+      allow get: if true;
+      allow list: if false;
+      allow create: if isAdmin() || (
+            ref.matches('^OIBI-[0-9]{6}-[A-Z0-9]{4}$')
+            && request.resource.data.keys().hasOnly(['status','updatedAt'])
+            && request.resource.data.status == 'new'
+            && request.resource.data.updatedAt == request.time);
+      allow update, delete: if isAdmin();
     }
   }
 }
