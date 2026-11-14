@@ -143,7 +143,7 @@ section{padding-block:68px}
 .item .go{flex:none;color:var(--accent);font-weight:700;transition:transform .15s}
 .item:hover{background:var(--tint)}
 .item:hover .go{transform:translateX(4px)}
-.tile .btn{margin-top:auto;align-self:flex-start}
+.tile .tip{margin-top:auto;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .tile.gold{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
 .tile.gold .ic{background:var(--gold-ink);color:var(--gold)}
 .tile.gold .cnt{color:rgba(42,28,0,.75)}
@@ -563,7 +563,7 @@ function svcById(id){for(var i=0;i<SERVICES.length;i++){if(SERVICES[i].id===id)r
   SERVICES.forEach(function(s){
     t+='<article class="tile'+(s.wide?' wide':'')+(s.gold?' gold':'')+(s.half?' half':'')+'"><header><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[s.icon]+'</svg></span><div><h3>'+esc(s.name)+'</h3><span class="cnt">'+s.items.length+(s.items.length===1?' SERVICE':' SERVICES')+'</span></div></header><ul>';
     s.items.forEach(function(i){t+='<li><button class="item" type="button" data-open="'+s.id+'" data-item="'+esc(i)+'"><span>'+esc(i)+'</span><span class="go" aria-hidden="true">→</span></button></li>';});
-    t+='</ul><button class="btn btn-solid btn-sm" type="button" data-open="'+s.id+'">Apply now</button></article>';
+    t+='</ul><p class="tip">Tap a service to apply</p></article>';
   });
   $('#tiles').innerHTML=t;
 })();
