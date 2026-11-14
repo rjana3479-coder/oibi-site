@@ -305,7 +305,7 @@ input[type=checkbox]{width:auto}
   <div class="wrap top-in">
     <a class="brand" href="#home" aria-label="OIBI Associates, home">
       <span class="mark" aria-hidden="true">OA</span>
-      <span><b>OIBI Associates</b><small>Tax Consultant Firm · Ranaghat</small></span>
+      <span><b>OIBI Associates</b><small>Tax Consultant Firm · Kolkata</small></span>
     </a>
     <nav class="links" aria-label="Sections">
       <a href="#services">Services</a>
@@ -323,7 +323,7 @@ input[type=checkbox]{width:auto}
     <span class="rupee" aria-hidden="true">₹</span>
     <div class="wrap hero-in">
       <div>
-        <span class="eyebrow">Tax consultant firm · Ranaghat, Nadia</span>
+        <span class="eyebrow">Tax consultant firm · Kolkata, Nadia</span>
         <h1>Your tax, GST and registrations, <em>filed right.</em></h1>
         <p class="lede">OIBI Associates handles income tax, GST, government registrations and accounting for individuals, shops, traders and small companies. Choose a service, send your details online, and we take it from there.</p>
         <div class="cta-row">
@@ -348,7 +348,7 @@ input[type=checkbox]{width:auto}
       <div class="facts">
         <div class="fact"><b>28</b><span>services under one roof</span></div>
         <div class="fact"><b>6</b><span>service lines, tax to digital signature</span></div>
-        <div class="fact"><b>Ranaghat</b><span>Nadia, West Bengal</span></div>
+        <div class="fact"><b>Kolkata</b><span>Nadia, West Bengal</span></div>
       </div>
     </div>
   </div>
@@ -435,7 +435,7 @@ input[type=checkbox]{width:auto}
         <div>
           <span class="eyebrow">Contact</span>
           <h2>Talk to OIBI Associates</h2>
-          <p class="sub">Send an application or message us on WhatsApp. Tax Consultant Firm, Ranaghat, Nadia, West Bengal.</p>
+          <p class="sub">Send an application or message us on WhatsApp. Tax Consultant Firm, Kolkata, Nadia, West Bengal.</p>
           <div class="lines">
             <div class="line"><span class="k">Mobile</span></div>
             <div class="line"><span class="k">Email</span></div>
@@ -461,7 +461,7 @@ input[type=checkbox]{width:auto}
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <span><b>OIBI Associates</b> · Tax Consultant Firm, Ranaghat</span>
+    <span><b>OIBI Associates</b> · Tax Consultant Firm, Kolkata</span>
     <span class="mono">Mobile · Email · <a href="#admin">Staff login</a></span>
   </div>
 </footer>
@@ -574,9 +574,9 @@ function nowMs(){return Date.now();}
 function seed(){
   var d=nowMs();
   return [
-   {id:'d1',ref:'OIBI-DEMO-0001',service:'gst',serviceLabel:'GST Services',items:['GST registration'],name:'Rahul Das',mobile:'9800000001',email:'',city:'Ranaghat',business:'Das Traders',answers:{'Business type':'Proprietorship','You deal in':'Goods','Yearly turnover':'₹20 – 40 lakh'},notes:'Shop opens next month.',status:'new',createdAt:d-3600e3*3,demo:true},
+   {id:'d1',ref:'OIBI-DEMO-0001',service:'gst',serviceLabel:'GST Services',items:['GST registration'],name:'Rahul Das',mobile:'9800000001',email:'',city:'Kolkata',business:'Das Traders',answers:{'Business type':'Proprietorship','You deal in':'Goods','Yearly turnover':'₹20 – 40 lakh'},notes:'Shop opens next month.',status:'new',createdAt:d-3600e3*3,demo:true},
    {id:'d2',ref:'OIBI-DEMO-0002',service:'itr',serviceLabel:'Income Tax Services',items:['Income tax return filing'],name:'Sunita Biswas',mobile:'9800000002',email:'',city:'Santipur',business:'',answers:{'Taxpayer type':'Salaried','Year to file':'FY 2025-26 (AY 2026-27)','Approximate yearly income':'₹5 – 10 lakh'},notes:'',status:'progress',createdAt:d-3600e3*30,adminNote:'Form 16 received.',demo:true},
-   {id:'d3',ref:'OIBI-DEMO-0003',service:'gov',serviceLabel:'Government Registrations',items:['Udyam Aadhaar','FSSAI registration'],name:'Amit Sarkar',mobile:'9800000003',email:'',city:'Ranaghat',business:'Sarkar Sweets',answers:{'Applicant type':'Proprietorship','Business activity':'Sweet shop'},notes:'',status:'done',createdAt:d-3600e3*80,demo:true}
+   {id:'d3',ref:'OIBI-DEMO-0003',service:'gov',serviceLabel:'Government Registrations',items:['Udyam Aadhaar','FSSAI registration'],name:'Amit Sarkar',mobile:'9800000003',email:'',city:'Kolkata',business:'Sarkar Sweets',answers:{'Applicant type':'Proprietorship','Business activity':'Sweet shop'},notes:'',status:'done',createdAt:d-3600e3*80,demo:true}
   ];
 }
 function loadDemo(){try{var s=localStorage.getItem('oibi_demo');if(s){mem=JSON.parse(s);return;}}catch(e){}mem=seed();}
@@ -643,7 +643,7 @@ function openForm(id,pick){
     '<div class="grp"><h4>About you</h4>'+
      '<div class="g2"><div class="fld"><label for="f_name">Full name *</label><input id="f_name" name="name" type="text" autocomplete="name" required></div>'+
      '<div class="fld"><label for="f_mobile">Mobile number *</label><input id="f_mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10-digit number" required></div></div>'+
-     '<div class="g2"><div class="fld"><label for="f_city">Town or village</label><input id="f_city" name="city" type="text" placeholder="e.g. Ranaghat"></div>'+
+     '<div class="g2"><div class="fld"><label for="f_city">Town or village</label><input id="f_city" name="city" type="text" placeholder="e.g. Kolkata"></div>'+
      '<div class="fld"><label for="f_email">Email, optional</label><input id="f_email" name="email" type="email" autocomplete="email"></div></div>'+
      '<div class="fld"><label for="f_biz">Business or firm name, if any</label><input id="f_biz" name="business" type="text"></div>'+
     '</div>'+
