@@ -7,5 +7,5 @@ window.OIBI_FIREBASE_CONFIG = {
   storageBucket: "oibi-associates.firebasestorage.app",
   messagingSenderId: "330045207231",
   appId: "1:330045207231:web:a6b5ed22d757bc94854c0a",
-  adminEmails: ["biplab876821@gmail.com"]
+  adminEmails: ["biplab876821@gmail.com", "bijayetabelundi@gmail.com"]
 };
