@@ -514,7 +514,7 @@ input[type=checkbox]{width:auto}
 <footer class="foot">
   <div class="wrap foot-in">
     <span><b>OIBI Associates</b> · Tax Consultant Firm, Kolkata</span>
-    <span class="mono">Mobile · Email · <a href="#about">Privacy</a> · <a href="#admin">Staff login</a></span>
+    <span class="mono">Mobile · Email · <a href="#about">Privacy</a> · <a href="#admin"></a></span>
   </div>
 </footer>
 
@@ -753,7 +753,7 @@ function done(rec){
    '<p>We will call you on <b>'+esc(rec.mobile)+'</b> to confirm the work and the documents needed.</p>'+
    (WA?'<a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'">Send documents on WhatsApp</a>':'')+
    '<button class="btn btn-ghost" type="button" id="cpRef">Copy reference number</button>'+
-   (LIVE?'':'<p class="demo-note">Preview mode: this was saved only in your browser. Open the Staff login to see it.</p>')+
+   (LIVE?'':'<p class="demo-note">Preview mode: this was saved only in your browser. Open the  to see it.</p>')+
    '</div></div>';
   $('#xBtn').addEventListener('click',closeOv);
   $('#cpRef').addEventListener('click',function(){copyText(rec.ref,this);});
