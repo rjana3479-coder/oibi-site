@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>OIBI Associates</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="OIBI Associates is a tax consultant firm for income tax, GST, government registrations, accounting, Tally and digital signature certificates.">
+<meta name="theme-color" content="#06362b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OIBI Associates">
+<meta property="og:description" content="Income tax, GST, government registrations and accounting for individuals and small businesses.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f3b61f'/%3E%3Ctext x='32' y='42' font-size='28' font-weight='700' text-anchor='middle' fill='%232a1c00' font-family='Arial'%3EOA%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AccountingService","name":"OIBI Associates","description":"Tax consultant firm for income tax, GST, government registrations, accounting, Tally and digital signature certificates.","url":"https://oibiassociates.in"}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hind:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout concept: deep-forest hero band with a stamped "filed" acknowledgement, bright service tiles below, forest contact band. Gold marks the single point of emphasis. */
@@ -178,6 +185,18 @@ section{padding-block:68px}
 @media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:30px}.step:nth-child(2n)::after{display:none}}
 @media (max-width:480px){.steps{grid-template-columns:1fr}.step::after{display:none}}
 
+/* about + privacy */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.about>*{min-width:0}
+.about .box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:14px;align-content:start}
+.about .box.alt{background:var(--tint)}
+.about h3{font-size:24px}
+.about p{color:var(--muted)}
+.about ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.about li{display:flex;gap:10px;align-items:baseline}
+.about li::before{content:"✓";flex:none;color:var(--accent);font-weight:800}
+@media (max-width:900px){.about{grid-template-columns:1fr}}
+
 /* track */
 .sr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .trk{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;gap:18px}
@@ -311,6 +330,7 @@ input[type=checkbox]{width:auto}
       <a href="#services">Services</a>
       <a href="#calendar">Filing calendar</a>
       <a href="#process">How we work</a>
+      <a href="#about">About</a>
       <a href="#track">Track</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -341,7 +361,7 @@ input[type=checkbox]{width:auto}
           <div class="r"><dt>Status</dt><dd>Filed</dd></div>
         </dl>
         <p class="by">Prepared and filed by OIBI Associates</p>
-        <div class="stamp" aria-hidden="true"><div>FILED<small>ON TIME</small></div></div>
+        <div class="stamp" aria-hidden="true"><div>FILED<small>SAMPLE</small></div></div>
       </div>
     </div>
     <div class="wrap">
@@ -361,7 +381,7 @@ input[type=checkbox]{width:auto}
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <span class="ribbon">Our Services</span>
+          <span class="ribbon">Tax · GST · Registrations</span>
           <h2>Everything your business needs on paper</h2>
         </div>
         <p>Tap any service to fill a short form. We use your details to prepare the work and call you with the documents we need.</p>
@@ -409,6 +429,38 @@ input[type=checkbox]{width:auto}
     </div>
   </section>
 
+  <section id="about" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">About and privacy</span>
+          <h2>A tax firm you deal with directly</h2>
+        </div>
+        <p>From the first call to the final acknowledgement, the same firm handles your work.</p>
+      </div>
+      <div class="about">
+        <div class="box">
+          <h3>About OIBI Associates</h3>
+          <p>OIBI Associates is a tax consultant firm. We prepare and file income tax and GST returns, handle government registrations and keep accounts for individuals, shops, traders and small companies. We also help with Tally software and digital signature certificates.</p>
+          <ul>
+            <li>We confirm the work and the fee before we start.</li>
+            <li>You send documents with your reference number, and you see the details before we file.</li>
+            <li>We never ask for your portal password, OTP or bank PIN.</li>
+          </ul>
+        </div>
+        <div class="box alt">
+          <h3>How we handle your details</h3>
+          <ul>
+            <li>We collect only what the service needs: your name, mobile number and the details you enter in the form.</li>
+            <li>We use them only to prepare your work and to contact you about it.</li>
+            <li>They are stored on Google Firebase, and only authorised staff of the firm can open them.</li>
+            <li>We do not sell them or share them for marketing. Ask us any time to delete your details.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="track" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
@@ -445,7 +497,7 @@ input[type=checkbox]{width:auto}
           <h3>Ready to start?</h3>
           <p>Fill the short form for your service. You get a reference number to quote when you send documents.</p>
           <button class="btn btn-solid" type="button" data-open="">Start an application</button>
-          <a class="btn btn-ghost" href="https://wa.me/?text=Hello%20OIBI%20Associates" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn btn-ghost" href="https://wa.me/916295005243?text=Hello%20OIBI%20Associates" target="_blank" rel="noopener">Chat on WhatsApp</a>
           <p class="warn">Never send your income tax or GST portal password, OTP or bank PIN, on this form or on WhatsApp.</p>
         </div>
       </div>
@@ -462,7 +514,7 @@ input[type=checkbox]{width:auto}
 <footer class="foot">
   <div class="wrap foot-in">
     <span><b>OIBI Associates</b> · Tax Consultant Firm, Kolkata</span>
-    <span class="mono">Mobile · Email · <a href="#admin">Staff login</a></span>
+    <span class="mono">Mobile · Email · <a href="#about">Privacy</a> · <a href="#admin">Staff login</a></span>
   </div>
 </footer>
 
